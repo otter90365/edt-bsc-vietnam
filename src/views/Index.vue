@@ -12,7 +12,7 @@
           </VueSlickCarousel>
           <btn class="d-none d-md-block btn-to-swap" :gradientColor="'linear-gradient(to right, #4FC987, #0A6C2F)'" isRounded isBlock isCustom :height="66" @clickBtn="toSwapWeb()">
             <template v-slot:custom>
-              <div class="rem-20 swap-text">{{ $t('toSwap') }}</div>
+              <div class="rem-6 rem-lg-10 mr-2 swap-text">{{ $t('toSwap') }}</div>
               <div class="go-wrap rounded-circle darkGreen--text rem-12 d-flex justify-center align-center">GO</div>
             </template>
           </btn>
@@ -22,11 +22,11 @@
             <logo class="mb-5" :name="card.token" :background="card.logoBg" :img="`icon-${card.token}-text.png`"></logo>
             <div class="rem-4 rem-md-12" :class="`dark${card.color}--text`">{{ $t('successfullyBorrowAmount') }}</div>
             <div class="rem-12 rem-md-30 mb-5 text-center" :class="`${(card.color).toLowerCase()}--text`">{{ totalAmount[card.token].toLocaleString() }} {{card.token.toUpperCase()}}</div>
-            <btn :gradientColor="`linear-gradient(to right, ${card.gradient[0]}, ${card.gradient[1]})`" :buttonText="$t('borrowMarket', {token: card.token.toUpperCase()})" isRounded :height="$store.state.nowWidth>960?60:40" @clickBtn="toLink(card.token)"></btn>
+            <btn :gradientColor="`linear-gradient(to right, ${card.gradient[0]}, ${card.gradient[1]})`" :buttonText="$t('borrowMarket', {token: card.token.toUpperCase()})" isRounded :height="$store.state.nowWidth>960?56:40" @clickBtn="toLink(card.token)"></btn>
           </v-card>
           <btn class="d-block d-md-none btn-to-swap" :gradientColor="'linear-gradient(to right, #4FC987, #0A6C2F)'" isRounded isBlock isCustom :height="43" @clickBtn="toSwapWeb()">
             <template v-slot:custom>
-              <div class="rem-10 swap-text">{{ $t('toSwap') }}</div>
+              <div class="rem-6 rem-sm-10 mr-2 swap-text">{{ $t('toSwap') }}</div>
               <div class="go-wrap rounded-circle darkGreen--text rem-2 d-flex justify-center align-center">GO</div>
             </template>
           </btn>
@@ -153,17 +153,17 @@ export default {
   }
   .btn-to-swap{
     position: relative;
-    .swap-text{
-      position: absolute;
-      left: 50%;
-      transform: translateX(-50%);
-    }
+    // .swap-text{
+    //   position: absolute;
+    //   left: 50%;
+    //   transform: translateX(-50%);
+    // }
     .go-wrap{
       width: 53px;
       height: 53px;
       background: white;
-      position: absolute;
-      right: -5px;
+      // position: absolute;
+      // right: -5px;
       @include dai_vuetify_md{
         width: 31px;
         height: 31px;
