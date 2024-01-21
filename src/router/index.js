@@ -222,6 +222,10 @@ router.beforeEach(async (to, from, next) => {
     next('/tw')
   }
 
+  if (to.params.token && !store.state.tokens.includes(to.params.token)){
+    next('/tw/usdt')
+  }
+
   // // Get user info from cookies
   // try{
   //   if (to.name !== 'Egt-swap' && to.name !== 'Ethegt-send' && to.name !== 'ADT'){

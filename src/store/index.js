@@ -21,7 +21,7 @@ export default new Vuex.Store({
     ADTAddress: '',
     locale: 'tw',
     langs: ['tw', 'jp', 'en', 'cn'],
-    tokens: ['usdt', 'tbt'],
+    tokens: ['usdt'],
     currToken: '',
     nowWidth: 0,
     backendUrl: 'https://home.api-absolute-uv.com',

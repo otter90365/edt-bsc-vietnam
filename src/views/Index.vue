@@ -62,17 +62,11 @@ export default {
       ],
       cardData: [
         {
-          token: 'tbt',
-          color: 'Purple',
-          gradient: ['#27ABC8', '#020C4F'],
-          logoBg: 'radial-gradient(66% 66% at 70% 34%, #27ABC8 0%, #020C4F 100%)'
-        },
-        {
           token: 'usdt',
           color: 'Green',
           gradient: ['#4c847c', '#0C5951'],
           logoBg: 'radial-gradient(66% 66% at 70% 34%, #00A77B 0%, #007959 100%)'
-        },
+        }
       ],
       // slide settings
       settings: {
