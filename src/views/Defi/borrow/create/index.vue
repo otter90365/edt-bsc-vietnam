@@ -54,14 +54,14 @@ export default {
   },
   computed:{
     ourToken(){
-      return ['egt', 'ebt']
+      return ['egt']
     }
   },
   methods:{
     setToken(){
       // console.log('this.$store.state.tokenList', this.$store.state.tokenList)
       this.icons = []
-      let list = this.$store.state.tokenList
+      let list = this.$store.state.tokenList.filter(item => item.name !== 'eos')
       for (let i=0; i<list.length; i++){
         this.icons.push({
           name: list[i].name,
