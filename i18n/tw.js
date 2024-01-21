@@ -5,6 +5,7 @@ export default {
   jp: '日本語',
   en: 'English',
   cn: '简体中文',
+  vi: 'Tiếng Việt',
   // navbar
   gamePool: '彩金池',
   buyEGT: '購買 EGT',

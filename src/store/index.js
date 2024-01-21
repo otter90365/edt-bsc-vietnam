@@ -20,7 +20,7 @@ export default new Vuex.Store({
     GameAddress: '',
     ADTAddress: '',
     locale: 'tw',
-    langs: ['tw', 'jp', 'en', 'cn'],
+    langs: ['tw', 'vi'],
     tokens: ['usdt'],
     currToken: '',
     nowWidth: 0,
