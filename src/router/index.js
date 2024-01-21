@@ -141,14 +141,6 @@ const routes = [
         meta: { requiresAuth: true },
       },
 
-      // game
-      {
-        path: '5c9wrqGSSa',
-        name: 'Game',
-        component: () => import('../views/Game.vue'),
-        meta: { requiresAuth: true },
-      },
-
       // ADT
       {
         path: 'adt',
