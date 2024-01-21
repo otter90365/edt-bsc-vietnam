@@ -63,49 +63,12 @@
             </v-list-item>
           </v-list>
         </v-menu>
-        
-        <v-icon
-          class="d-md-none d-flex ml-2"
-          dark
-          @click.stop="phoneNavShow = !phoneNavShow"
-        >
-          mdi-menu
-        </v-icon>
       </div>
     </v-app-bar>
 
     <v-main id="main">
       <router-view/>
     </v-main>
-
-    <v-navigation-drawer
-      v-model="phoneNavShow"
-      fixed
-      temporary
-      right
-      light
-      hide-overlay
-      style="top: 48px;"
-    >
-      <v-list dense>
-        <v-list-item
-          v-for="item in [...footer, ...navbar, { text: `registry`, link: '/registry', icon: `/icon-registry`}]"
-          :key="item.text"
-          :to="`/${$route.params.lang}/${$route.params.token}${item.link}`"
-          exact
-          @click="clickNavBtn"
-        >
-          <v-list-item-icon>
-            <v-icon v-if="item.icon.includes('mdi')">{{ item.icon }}</v-icon>
-            <img v-else :src="`${require(`@/assets/img${item.icon}-${$route.params.token}.png`)}`" width="20px" height="20px">
-          </v-list-item-icon>
-
-          <v-list-item-content>
-            <v-list-item-title>{{ $t(item.text) }}</v-list-item-title>
-          </v-list-item-content>
-        </v-list-item>
-      </v-list>
-    </v-navigation-drawer>
 
     <v-footer
       app
@@ -137,7 +100,6 @@ export default {
   name: 'App',
   mixins: [base],
   data: () => ({
-    phoneNavShow: false,
     footer: [
       {
         text: `toDeposit`,
