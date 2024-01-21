@@ -71,23 +71,27 @@
     </v-main>
 
     <v-footer
+      class="pt-3 ma-2 rounded app-footer"
+      style="z-index: 10;"
       app
       fixed
-      color="white"
-      :class="`primary_${$route.params.token}--text`"
-      style="z-index: 10;"
+      color="#1B1D22"
     >
-      <v-row>
-        <v-col cols="3" class="d-none d-sm-block"></v-col>
-        <v-col cols="6" sm="3" justify="center" align="center" class="can-click" :class="{'secondary':$route.path===item.link}" v-for="(item, i) in footer" :key="i">
-          <router-link :to="`/${$route.params.lang}/${$route.params.token}${item.link}`" class="text-decoration-none" :class="`primary_${$route.params.token}--text`">
-            <div class="w-100 h-100">
-              <img :src="`${require(`@/assets/img${item.icon}-${$route.params.token}.png`)}`" width="30px">
+      <v-row justify="center" class="px-4">
+        <v-col cols="12" sm="8" md="6" class="d-flex justify-space-between align-center">
+          <router-link
+            v-for="(item, i) in footer"
+            :key="i"
+            class="text-decoration-none footer-nav-link"
+            :class="{'active-link': $route.fullPath === `/${$route.params.lang}/${$route.params.token}${item.link}`}"
+            :to="`/${$route.params.lang}/${$route.params.token}${item.link}`"
+          >
+            <div class="d-flex flex-column justify-center align-center grey--text">
+              <img class="mb-1" :src="`${require(`@/assets/img${item.icon}.svg`)}`" width="30px">
               <div>{{ $t(item.text) }}</div>
             </div>
           </router-link>
         </v-col>
-        <v-col cols="3" class="d-none d-sm-block"></v-col>
       </v-row>
     </v-footer>
   </v-app>
@@ -104,6 +108,11 @@ export default {
       {
         text: `toDeposit`,
         link: '/deposit',
+        icon: '/icon-deposit'
+      },
+      {
+        text: `backToIndex`,
+        link: '/',
         icon: '/icon-deposit'
       },
       {
@@ -281,6 +290,24 @@ export default {
   box-shadow: 0 4px 16px 4px rgb(0 0 0 / 20%) !important;
   @media (max-width: 600px){
     padding: 40px 20px;
+  }
+}
+.app-footer {
+  .footer-nav-link {
+    position: relative;
+    &.active-link::after {
+      content: '';
+      position: absolute;
+      bottom: -6px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 40px;
+      height: 5px;
+      background: url('./assets/img/deco-footer-active.svg');
+      // width: 100px;
+      // height: 10px;
+      // background: green !important;
+    }
   }
 }
 // common style
