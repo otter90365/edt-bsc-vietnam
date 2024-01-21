@@ -9,12 +9,6 @@
           <div class="d-flex flex-column justify-center align-center mb-5">
             <h2 :class="`primary_${$route.params.token}--text`">{{ $t('investAmount') }}</h2>
             <h2 class="mb-3">{{ totalAmount.toLocaleString() }} {{ ($route.params.token).toUpperCase() }}</h2>
-            <h2 :class="`primary_${$route.params.token}--text`">{{ $t('gamePoolAmount') }}</h2>
-            <h2 class="red--text mb-5">
-              <!-- {{ roundAmount.toLocaleString() }} {{ ($route.params.token).toUpperCase() }} -->
-              {{ $route.params.token === 'tbt' ? '10,570.608' : '646.175' }} {{ ($route.params.token).toUpperCase() }}
-            </h2>
-            <btn class="mb-3" :buttonText="'gamePool'" :color="`primary_${$route.params.token}`" :width="'100%'" @clickBtn="toGame()"></btn>
             <div class="bsc-egt-block d-flex flex-column justify-center align-center pa-3 can-click" @click="toSwap()" :data-type="$route.params.token">
               <img :src="`${require(`@/assets/img/icon-bscegt-${$route.params.token}.png`)}`" width="40px">
               <div class="font-weight-bold" :class="`primary_${$route.params.token}--text`">{{ $t('swapEGT') }}</div>
@@ -27,31 +21,16 @@
 </template>
 
 <script>
-import btn from "@/components/btn.vue";
-import Game from "@/plugins/game.js";
 import Defi from "@/plugins/defi.js";
 export default {
   name: "Home",
   data(){
     return {
-      gameContract: null,
       defiContract: null,
-      totalAmount: '--',
-      roundAmount: '--'
+      totalAmount: '--'
     }
   },
-  components:{
-    btn
-  },
   methods:{
-    toGame(){
-      if (this.$store.state.account){
-        // this.$router.push({name: 'Game'})
-        this.$toasted.error('因鏈上節點故障，彩金池維修中')
-      }else{
-        this.$toasted.error(this.$t('loginFirst'))
-      }
-    },
     toSwap(){
       if (this.$store.state.account){
         // this.$router.push({name: 'Egt-swap', params: {lang: this.$store.state.locale, token: this.$route.params.token}})
@@ -67,16 +46,6 @@ export default {
         this.totalAmount = 0
         console.log('error', error)
       }
-    },
-    async getRoundAmount(){
-      try{
-        let round = await this.gameContract.getCurrRound()
-        let detail = await this.gameContract.getRoundDetails(round)
-        this.roundAmount = detail.roundamount
-      }catch(error){
-        this.roundAmount = 0
-        console.log('error', error)
-      }
     }
   },
   created(){
@@ -86,10 +55,8 @@ export default {
   },
   async mounted(){
     // console.log('==========index==========')
-    this.gameContract = await new Game()
     this.defiContract = await new Defi()
     await this.getTotalAmount()
-    await this.getRoundAmount()
   }
 }
 </script>

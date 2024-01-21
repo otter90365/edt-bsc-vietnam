@@ -113,11 +113,6 @@ export default {
       },
     ],
     navbar: [
-      {
-        text: `gamePool`,
-        link: '/game',
-        icon: '/icon-game',
-      },
       // {
       //   text: `buyEGT`,
       //   link: '/egt',
