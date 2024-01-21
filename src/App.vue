@@ -10,14 +10,13 @@
     >
       <div class="d-flex align-center">
         <v-img
-          alt="Edt-Logo"
-          class="shrink mr-0 mr-md-2"
+          alt="defi-logo"
+          class="flex-grow-0 mr-0 mr-md-2"
           contain
           src="@/assets/img/logo-egtdefi.png"
           transition="scale-transition"
-          :height="$store.state.nowWidth>960?60:30"
+          :width="$store.state.nowWidth>960?200:120"
         />
-        <span><span class="rem-6 rem-md-24 mr-1 mr-md-2">{{ $t('title')[0] }}</span><span class="rem-2 rem-md-12">{{ $t('title')[1] }}</span></span>
       </div>
 
       <v-spacer></v-spacer>

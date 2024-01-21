@@ -8,10 +8,10 @@
     >
       <div class="d-flex align-center">
         <v-img
-          alt="Edt-Logo"
+          alt="defi-logo"
           class="shrink mr-2 can-click"
           contain
-          :src="`${require(`@/assets/img/icon-egt-${$route.params.token}.png`)}`"
+          :src="`${require(`@/assets/img/icon-logo.png`)}`"
           transition="scale-transition"
           width="40"
           height="40"
