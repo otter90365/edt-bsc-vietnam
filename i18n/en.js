@@ -163,6 +163,9 @@ export default {
   dollar: '',
   dataUpdated: 'The data was last updated: ',
   calculate: 'Calculate',
+  vs: ' for ',
+  vsEn: 'Swap',
+  vsBack: '',
   // community
   refererAmount: 'My Referees',
   communityAmount: 'My Community Members',
