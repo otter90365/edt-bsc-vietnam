@@ -61,12 +61,6 @@ const routes = [
         meta: { requiresAuth: false },
       },
       {
-        path: 'calculator/twd',
-        name: 'Calculator-twd',
-        component: () => import('../views/Calculator/twd.vue'),
-        meta: { requiresAuth: false },
-      },
-      {
         path: 'calculator/usdt',
         name: 'Calculator-usdt',
         component: () => import('../views/Calculator/usdt.vue'),

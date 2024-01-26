@@ -30,20 +30,12 @@ export default {
     return {
       icons: [
         {
-          img: 'icon-twd.svg',
-          text: 'EGT / TWD',
-          link: '/calculator/twd',
-        },
-        {
           img: 'icon-usdt.png',
           text: 'EGT / USDT',
-          link: '/calculator/usdt',
+          link: '/calculator/usdt'
         }
       ]
     }
-  },
-  async mounted(){
-    
   }
 }
 </script>
