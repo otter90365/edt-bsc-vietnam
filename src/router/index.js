@@ -211,11 +211,11 @@ const router = new VueRouter({
 router.beforeEach(async (to, from, next) => {
   // console.log('to.params.lang', to.params.lang)
   if (!to.params.lang || !store.state.langs.includes(to.params.lang)){
-    next('/tw')
+    next('/en')
   }
 
   if (to.params.token && !store.state.tokens.includes(to.params.token)){
-    next('/tw/usdt')
+    next('/en/usdt')
   }
 
   // // Get user info from cookies
