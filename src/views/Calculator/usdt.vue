@@ -4,7 +4,7 @@
       <v-col cols="11" sm="9" md="6">
         <v-card light class="calculator-card card-wrap d-flex flex-column justify-center align-center">
           <img src="@/assets/img/icon-usdt.png" width="60px" class="mb-5">
-          <h2 :class="`primary_${$route.params.token}--text`">{{ $t('vsEn') }} EGT {{ $t('vs') }} USDT {{ $t('vsBack') }}</h2>
+          <h2 :class="`primary_${$route.params.token}--text`">{{ $t('swapCalculateTitle', {token1: 'EGT', token2: 'USDT'}) }}</h2>
           <div class="mb-10" :class="`primary_${$route.params.token}--text`">{{ $t('egtExchangeRate', {value: '1 : 1200'}) }}</div>
           <v-row class="mb-10">
             <v-col cols="12">
