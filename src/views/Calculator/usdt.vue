@@ -31,7 +31,7 @@
           </v-row>
           <div v-if="updateTime" class="mb-3 red--text text-caption text-right" style="width: 100%;">{{ $t('dataUpdated') }} {{ timestampToTime(updateTime) }}</div>
           <btn class="mb-5" :buttonText="'calculate'" :color="`primary_${$route.params.token}`" :isCenter="true" :width="270" @clickBtn="calculate()"></btn>
-          <div class="can-click" @click="$router.push({name: 'Home'})">{{ $t('backToIndex') }}</div>
+          <div class="can-click" @click="$router.push({name: 'Index'})">{{ $t('backToIndex') }}</div>
         </v-card>
       </v-col>
     </v-row>
