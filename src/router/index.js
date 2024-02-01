@@ -299,7 +299,7 @@ router.beforeEach(async (to, from, next) => {
     // 未登入
     if (store.state.account === ''){
       try{
-        next({ name: 'Home' });
+        next({ name: 'Index' });
       }catch(error){
         console.log('error', error)
       }

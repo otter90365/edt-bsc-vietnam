@@ -39,7 +39,7 @@
           ></v-pagination>
 
           <btn class="mb-5" :buttonText="'orderList'" :color="`primary_${$route.params.token}`" :isCenter="true" :width="270" @clickBtn="$router.push({name: 'Defi-deposit-list'})"></btn>
-          <div class="can-click" @click="$router.push({name: 'Home'})">{{ $t('backToIndex') }}</div>
+          <div class="can-click" @click="$router.push({name: 'Index'})">{{ $t('backToIndex') }}</div>
         </v-card>
       </v-col>
     </v-row>

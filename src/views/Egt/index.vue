@@ -30,7 +30,7 @@
 
           <btn v-if="allowance===0 || allowance<balance" class="mb-5" :buttonText="'sellApprove'" :color="'red darken-1'" :isCenter="true" :width="270" @clickBtn="approve()"></btn>
           <btn v-else class="mb-5" :buttonText="'buy'" color="primary" :isCenter="true" :width="270" @clickBtn="clickBuyBtn()"></btn>
-          <div class="can-click" @click="$router.push({name: 'Home'})">{{ $t('backToIndex') }}</div>
+          <div class="can-click" @click="$router.push({name: 'Index'})">{{ $t('backToIndex') }}</div>
         </v-card>
       </v-col>
     </v-row>

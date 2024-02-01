@@ -83,7 +83,7 @@ export default {
       if (this.$store.state.account){
         this.$store.commit('clearInfo')
         this.$cookies.remove('address')
-        this.$router.push({name: 'Home'})
+        this.$router.push({name: 'Index'})
       }else{
         if (window.ethereum) {
           await this.connectMetamask()

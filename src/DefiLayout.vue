@@ -83,8 +83,8 @@
             v-for="(item, i) in footer"
             :key="i"
             class="text-decoration-none footer-nav-link"
-            :class="{'active-link': $route.fullPath === `/${$route.params.lang}/${$route.params.token}${item.link}`}"
-            :to="`/${$route.params.lang}/${$route.params.token}${item.link}`"
+            :class="{'active-link': $route.fullPath === item.link}"
+            :to="item.link"
           >
             <div class="d-flex flex-column justify-center align-center grey--text">
               <img class="mb-1" :src="`${require(`@/assets/img${item.icon}.svg`)}`" width="30px">
@@ -104,23 +104,6 @@ export default {
   name: 'App',
   mixins: [base],
   data: () => ({
-    footer: [
-      {
-        text: `toDeposit`,
-        link: '/deposit',
-        icon: '/icon-deposit'
-      },
-      {
-        text: `backToIndex`,
-        link: '/',
-        icon: '/icon-deposit'
-      },
-      {
-        text: `toBorrow`,
-        link: '/borrow',
-        icon: '/icon-borrow'
-      },
-    ],
     navbar: [
       // {
       //   text: `buyEGT`,
@@ -158,13 +141,32 @@ export default {
     shortAddress(){
       return `${this.$store.state.account.slice(0, 6)}...${this.$store.state.account.slice(38)}`
     },
+    footer () {
+      return [
+        {
+          text: `toDeposit`,
+          link: `/${this.$route.params.lang}/${this.$route.params.token}/deposit`,
+          icon: '/icon-deposit'
+        },
+        {
+          text: `backToIndex`,
+          link: `/${this.$route.params.lang}`,
+          icon: '/icon-deposit'
+        },
+        {
+          text: `toBorrow`,
+          link: `/${this.$route.params.lang}/${this.$route.params.token}/borrow`,
+          icon: '/icon-borrow'
+        }
+      ]
+    }
   },
   methods:{
     async log(){
       if (this.$store.state.account){
         this.$store.commit('clearInfo')
         this.$cookies.remove('address')
-        this.$router.push({name: 'Home'})
+        this.$router.push({name: 'Index'})
       }else{
         if (window.ethereum) {
           await this.connectMetamask()

@@ -28,7 +28,7 @@
           </v-row>
 
           <div class="px-5 mb-10" style='width: 100%;'>
-            <div class="can-click w-100 text-center" @click="$router.push({name: 'Home'})">{{ $t('backToIndex') }}</div>
+            <div class="can-click w-100 text-center" @click="$router.push({name: 'Index'})">{{ $t('backToIndex') }}</div>
           </div>
         </v-card>
       </v-col>

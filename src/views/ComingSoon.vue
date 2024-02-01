@@ -6,7 +6,7 @@
           <v-icon color="amber" large class="mb-5">mdi-alert</v-icon>
           <h2>{{ $t('webConstructing') }}</h2>
           <div class="mb-15">{{ $t('webConstructingDescription') }}</div>
-          <div class="can-click" @click="$router.push({name: 'Home'})">{{ $t('backToIndex') }}</div>
+          <div class="can-click" @click="$router.push({name: 'Index'})">{{ $t('backToIndex') }}</div>
         </v-card>
       </v-col>
     </v-row>

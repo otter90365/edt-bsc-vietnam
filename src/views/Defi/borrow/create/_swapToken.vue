@@ -31,7 +31,7 @@
 
           <btn class="mb-5" v-if="allowance===0 || allowance<balance" :buttonText="'approve'" :color="'red darken-1'" :isCenter="true" :width="270" @clickBtn="approve()"></btn>
           <btn class="mb-5" v-else :buttonText="'apply'" :color="`primary_${$route.params.token}`" :isCenter="true" :width="270" @clickBtn="create()"></btn>
-          <div class="can-click" @click="$router.push({name: 'Home'})">{{ $t('backToIndex') }}</div>
+          <div class="can-click" @click="$router.push({name: 'Index'})">{{ $t('backToIndex') }}</div>
         </v-card>
       </v-col>
     </v-row>

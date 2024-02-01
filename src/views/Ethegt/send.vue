@@ -31,7 +31,7 @@
           </v-form>
           <div class="mb-15 d-flex flex-column justify-center align-center">
             <btn class="mb-3" :buttonText="'sendToken'" :isCenter="true" :width="270" :color="`primary_${$route.params.token}`" @clickBtn="send()"></btn>
-            <div class="can-click w-100 text-center" @click="$router.push({name: 'Home'})">{{ $t('backToIndex') }}</div>
+            <div class="can-click w-100 text-center" @click="$router.push({name: 'Index'})">{{ $t('backToIndex') }}</div>
           </div>
         </v-card>
       </v-col>

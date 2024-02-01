@@ -4,7 +4,7 @@
       <v-col cols="11" sm="9" md="6">
         <v-card light class="other-card card-wrap d-flex flex-column justify-center align-center">
           <h2 class="mb-5">{{ $t('cannotFindPage') }}</h2>
-          <div class="can-click" @click="$router.push({name: 'Home'})">{{ $t('backToIndex') }}</div>
+          <div class="can-click" @click="$router.push({name: 'Index'})">{{ $t('backToIndex') }}</div>
         </v-card>
       </v-col>
     </v-row>
