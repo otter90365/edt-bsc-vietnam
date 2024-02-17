@@ -53,7 +53,7 @@
       class="mr-4 mb-5"
       style="width: 100%;"
     >{{ inputText }}</div>
-    <div class="mb-5" style="min-width: 30px">{{ unit }}</div>
+    <div class="mb-5" style="min-width: 40px">{{ unit }}</div>
   </div>
 </template>
 <script>

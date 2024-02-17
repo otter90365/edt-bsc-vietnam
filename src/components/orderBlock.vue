@@ -63,7 +63,7 @@
       </v-col>
     </v-row>
     
-    <div class="d-flex justify-space-around align-center order-btn pa-2" :data-type="$route.params.token">
+    <div class="d-flex flex-wrap justify-space-around align-center order-btn pa-2" :data-type="$route.params.token">
       <div>{{ $t('APR') }} {{ mode==='loan' ? round(365 / (data.settleday / 24) * (round(data.rate))) : round(365 / (data.settleday / 24) * (round(data.rate) / 2)) }} %</div>
       <btn v-if="isLock" :buttonText="'approve'" :color="'red darken-1'" :isCenter="true" @clickBtn="approve()"></btn>
       <btn v-else
