@@ -7,12 +7,6 @@
             <div class="lightGrey--text text-md-center rem-2 rem-md-6 mb-2 mb-md-4">{{ $t('homeTitle') }}</div>
             <div class="pink--text text-md-center rem-12 rem-md-24 mb-md-15">{{ $t('homeSubtitle') }}</div>
           </div>
-          <btn class="d-none d-md-block btn-to-swap" :gradientColor="'linear-gradient(to right, #4FC987, #0A6C2F)'" isRounded isBlock isCustom :height="66" @clickBtn="toSwapWeb()">
-            <template v-slot:custom>
-              <div class="rem-6 rem-lg-10 mr-2 swap-text">{{ $t('toSwap') }}</div>
-              <div class="go-wrap rounded-circle darkGreen--text rem-12 d-flex justify-center align-center">GO</div>
-            </template>
-          </btn>
         </v-col>
         <v-col cols="12" md="6">
           <v-card class="d-flex flex-column align-center py-10 mb-6" :img="`${require(`@/assets/img/img-${card.token}-market.png`)}`" v-for="card in cardData" :key="card.token">
@@ -21,12 +15,6 @@
             <div class="rem-12 rem-md-30 mb-5 text-center" :class="`${(card.color).toLowerCase()}--text`">{{ totalAmount[card.token].toLocaleString() }} {{card.token.toUpperCase()}}</div>
             <btn :gradientColor="`linear-gradient(to right, ${card.gradient[0]}, ${card.gradient[1]})`" :buttonText="$t('borrowMarket', {token: card.token.toUpperCase()})" isRounded :height="$store.state.nowWidth>960?56:40" @clickBtn="toLink(card.token)"></btn>
           </v-card>
-          <btn class="d-block d-md-none btn-to-swap" :gradientColor="'linear-gradient(to right, #4FC987, #0A6C2F)'" isRounded isBlock isCustom :height="43" @clickBtn="toSwapWeb()">
-            <template v-slot:custom>
-              <div class="rem-6 rem-sm-10 mr-2 swap-text">{{ $t('toSwap') }}</div>
-              <div class="go-wrap rounded-circle darkGreen--text rem-2 d-flex justify-center align-center">GO</div>
-            </template>
-          </btn>
         </v-col>
       </v-row>
     </v-container>
@@ -90,9 +78,6 @@ export default {
   methods: {
     toLink(token){
       this.$router.push({name: "lang-token", params: {lang: this.$store.state.locale, token: token}})
-    },
-    toSwapWeb(){
-      window.open(`https://bep20swaput.com/${this.$store.state.locale}`)
     },
     async getTotalAmount(){
       try{
