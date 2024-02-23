@@ -7,9 +7,6 @@
             <div class="lightGrey--text text-md-center rem-2 rem-md-6 mb-2 mb-md-4">{{ $t('homeTitle') }}</div>
             <div class="pink--text text-md-center rem-12 rem-md-24 mb-md-15">{{ $t('homeSubtitle') }}</div>
           </div>
-          <VueSlickCarousel class="carousel mb-11" ref="carousel" v-bind="settings">
-            <img class="rounded-lg can-click" :src="`${require(`@/assets/img/${item.image}`)}`" v-for="(item, i) in slides" :key="i" width="100%"/>
-          </VueSlickCarousel>
           <btn class="d-none d-md-block btn-to-swap" :gradientColor="'linear-gradient(to right, #4FC987, #0A6C2F)'" isRounded isBlock isCustom :height="66" @clickBtn="toSwapWeb()">
             <template v-slot:custom>
               <div class="rem-6 rem-lg-10 mr-2 swap-text">{{ $t('toSwap') }}</div>
@@ -38,10 +35,6 @@
 <script>
 import logo from '@/components/logo.vue'
 import btn from '@/components/btn.vue'
-import VueSlickCarousel from 'vue-slick-carousel'
-import 'vue-slick-carousel/dist/vue-slick-carousel.css'
-// optional style for arrows & dots
-import 'vue-slick-carousel/dist/vue-slick-carousel-theme.css'
 import Defi from "@/plugins/defi.js";
 export default {
   data(){
@@ -92,8 +85,7 @@ export default {
   },
   components: {
     logo,
-    btn,
-    VueSlickCarousel
+    btn
   },
   methods: {
     toLink(token){
