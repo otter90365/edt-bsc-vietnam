@@ -19,7 +19,7 @@ export default new Vuex.Store({
     TBTAddress: '0xd7F97f2cBcDC696484dA7C04AD012723392Ce30B',
     GameAddress: '',
     ADTAddress: '',
-    locale: 'en',
+    locale: 'vi',
     langs: ['en', 'vi'],
     tokens: ['usdt'],
     currToken: '',
